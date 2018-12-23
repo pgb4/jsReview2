@@ -1,25 +1,25 @@
-var h3 = document.querySelector("h3");
-var color1 = document.querySelector(".color1");
-var color2 = document.querySelector(".color2");
-var body = document.querySelector("body")
-var random = document.querySelector("button");
+const h3 = document.querySelector("h3");
+let color1 = document.querySelector(".color1");
+let color2 = document.querySelector(".color2");
+const body = document.querySelector("body")
+let random = document.querySelector("button");
 
-function changeColor() {
+const changeColor = () => {
     body.style.background=`linear-gradient(to right, ${color1.value} , ${color2.value})`
     h3.textContent=body.style.background;
 }
 
-function componentToHex(c) {
-    var hex = c.toString(16);
+const componentToHex = (c) => {
+    let hex = c.toString(16);
     return hex.length == 1 ? "0" + hex : hex;
 }
 
-function rgbToHex(r, g, b) {
+const rgbToHex = (r, g, b) => {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
-function randomizeColors(){
-    var c = [];
+const randomizeColors = () => {
+    let c = [];
     for(i=0; i<6; i++){
         c[i] = Math.round((Math.random()*255));
     }
